@@ -1,0 +1,25 @@
+/* @license
+ * MyFonts Webfont Build ID 2600495, 2013-07-11T19:22:06-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Liam by Laura Worthington
+ * URL: http://www.myfonts.com/fonts/laura-worthington/liam/regular/
+ * Copyright: Copyright (c) 2011 by Laura Worthington. All rights reserved.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2600495
+ * 
+ * © 2013 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/27ae2f");
+
+@font-face {font-family: 'Liam-web';src: url('/webfonts/27AE2F_0_0.eot');src: url('/webfonts/27AE2F_0_0.eot?#iefix') format('embedded-opentype'),url('/webfonts/27AE2F_0_0.woff') format('woff'),url('/webfonts/27AE2F_0_0.ttf') format('truetype');src: url('/webfonts/liam.otf');}
+ 

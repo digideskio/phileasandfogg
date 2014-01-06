@@ -1,0 +1,166 @@
+---
+title: Apply | Phileas & Fogg
+page: apply
+---
+<div class="subpage-white">
+
+  <div class="grid-container">
+    <div class="grid-65 suffix-5 grid-parent">
+      <div id="form-done">
+        <h2>Thanks for applying!</h2>
+        <p>If you have questions, please check out the <a href="/about">about page</a> or <a href="mailto:gregory@phileasandfogg.com">email us</a>!</p>
+        <p>Let everyone on 
+          <a id="twitter" target="_blank" href="https://twitter.com/intent/tweet?source=webclient&text=I just applied to Phileas+%26+Fogg,+the+globetrotting+labs+company!+http://phileasandfogg.com+(@phileasandfogg)&a=">
+            <i class="icon-twitter"></i> Twitter
+          </a>
+          and 
+          <a href="#" id="facebook"><i class="icon-facebook"></i> Facebook</a> 
+          know you applied!</p>
+
+        <div class="flyingmachine"></div>
+      </div>
+      <form id="form-apply">
+        <h2>Application Form</h2>
+        <p>If you have questions, check out the <a href="/about">about page</a> or <a href="mailto:gregory@phileasandfogg.com">email us</a>.</p>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label for="field_fullname">Full Name</label></div>
+          <div class="grid-80"><input name="fullname" type="text" id="field_fullname" placeholder="First and last name"></div>
+        </div>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label for="field_email">Email</label></div>
+          <div class="grid-80"><input type="text" name="email" id="field_email" placeholder="you@domain.com"></div>
+        </div>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label for="field_location">Current Location</label></div>
+          <div class="grid-80"><input id="field_location" class="location" name="location" type="text" placeholder="City, State"></div>
+        </div>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label for="field_links">Links</label></div>
+          <div class="grid-80"><textarea id="field_links" name="links" placeholder="Github, Twitter, LinkedIn, Dribbble, Portfolio, etc" rows="5"></textarea></div>
+        </div>
+
+        <div class="grid-container grid-parent skills">
+          <div class="grid-20 grid-parent"><label>Skills</label></div>
+          <div class="grid-25">
+            <strong>Programming</strong>
+            <ul>
+              <li><input type="checkbox" class="styled" id="skills_html" name="skills_html" value="1"> <label for="skills_html">HTML/CSS/JS</label></li>
+              <li><input type="checkbox" class="styled" id="skills_angular" name="skills_angular" value="1"> <label for="skills_angular">AngularJS</label></li>
+              <li><input type="checkbox" class="styled" id="skills_ios" name="skills_ios" value="1"> <label for="skills_ios">iOS</label></li>
+              <li><input type="checkbox" class="styled" id="skills_android" name="skills_android" value="1"> <label for="skills_android">Android</label></li>
+            </ul>
+          </div>
+          <div class="grid-30">
+            <strong class="hide-on-mobile hide-on-tablet">&nbsp;</strong>
+            <ul>
+              <li><input type="checkbox" class="styled" id="skills_node" name="skills_node" value="1"> <label for="skills_node">Node.js</label></li>
+              <li><input type="checkbox" class="styled" id="skills_ruby" name="skills_ruby" value="1"> <label for="skills_ruby">Ruby <span>Rails/etc</span></label></li>
+              <li><input type="checkbox" class="styled" id="skills_python" name="skills_python" value="1"> <label for="skills_python">Python <span>Django/Flask</span></label></li>
+              <li><input type="checkbox" class="styled" id="skills_devops" name="skills_devops" value="1"> <label for="skills_devops">DevOps</label></li>
+            </ul>
+          </div>
+          <div class="grid-25">
+            <strong>Design</strong>
+            <ul>
+              <li><input type="checkbox" class="styled" id="skills_vd" name="skills_vd" value="1"> <label for="skills_vd">Visual Design</label></li>
+              <li><input type="checkbox" class="styled" id="skills_ux" name="skills_ux" value="1"> <label for="skills_ux">UX Design</label></li>
+              <li><input type="checkbox" class="styled" id="skills_app" name="skills_app" value="1"> <label for="skills_app">App Design</span></label></li>
+              <li><input type="checkbox" class="styled" id="skills_ill" name="skills_ill" value="1"> <label for="skills_ill">Illustration</span></label></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label>When would you start?</label></div>
+          <div class="grid-40">
+            <ul class="when-picker">
+              <li class="date">
+                <input type="radio" checked class="styled" name="start" value="fall" id="when_fall">
+                <label for="when_fall">October 2013 <span>&middot; Costa Rica</label></span>
+              </li>
+              <li class="date fader">
+                <input type="radio" class="styled" name="start" value="winter" id="when_winter"> 
+                <label for="when_winter">January 2014 <span>&middot; Country TBD</span></label>
+              </li>
+              <li class="date fader">
+                <input type="radio" class="styled" name="start" value="spring" id="when_spring"> 
+                <label for="when_spring">April 2014 <span>&middot; Country TBD</span></label>
+              </li>
+              <li>
+                <input type="radio" class="styled" name="start" value="newsletter" id="when_newsletter"> 
+                <label for="when_newsletter">Just put me on the mailing list!</label>
+              </li>
+            </ul>
+          </div>
+          <div class="grid-40">
+            <p><em>Our blocks are three months long, however you're invited to do as many or as few as you'd like!</em></p>
+          </div>
+        </div>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label>Uploads!</label></div>
+          <div class="grid-40">
+            <div id="upload_video">
+            <input type="hidden" name="url_video">
+              <a href="#" class="upload">
+                <strong>Video</strong>
+                <div class="blocky"></div>
+                <p>In thirty seconds, introduce yourself and explain why you want to join P<em>&amp;</em>F.</p>
+              </a>
+            </div>
+          </div>
+          <div class="grid-40">
+            <div id="upload_resume">
+              <input type="hidden" name="url_resume">
+              <a href="#" class="upload" id="upload_resume">
+                <strong>Resume</strong>
+                <div class="blocky"></div>
+                <p>We'll need a PDF or Word version of your resume to look over &mdash; and make sure it's up to date!</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label for="field_dream">Dream city?</label></div>
+          <div class="grid-80"><input type="text" class="location" name="dream" id="field_dream" placeholder="If you could live anywhere in the world..."></div>
+        </div>
+
+        <div class="grid-container grid-parent">
+          <div class="grid-20 grid-parent"><label>About You</label></div>
+          <div class="grid-80">
+            <ul>
+              <li><input type="checkbox" id="about_us" class="styled" name="about_us" value="1"> <label for="about_us">I can legally work in the US</label></li>
+              <li><input type="checkbox" id="about_pp" class="styled" name="about_pp" value="1"> <label for="about_pp">I currently posess a valid passport</label></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-container">
+          <div class="grid-20">&nbsp;</div>
+          <div class="grid-80">
+            <button>Apply!</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="grid-30">
+      <h2>Timeline</h2>
+      <ul class="timeline">
+        <li><strong>Applications Open</strong> August 15, 2013</li>
+        <li><strong>Application Deadline</strong> September 1st, 2013 11:59pm</li>
+        <li><strong>Offer Letters</strong>  By September 3rd, 2013</li>
+        <li><strong>Departure</strong> Approx October 1st, 2013</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="http://www.parsecdn.com/js/parse-1.2.9.min.js"></script>
+<script src="//api.filepicker.io/v1/filepicker.js"></script>
+

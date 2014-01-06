@@ -1,0 +1,748 @@
+@import nib
+
+serifdefault = unquote("400 15px/1.6 'Ledger', Garamond, Georgia, serif")
+serifmain = unquote("400 18px/1.8 'Corben', Garamond, Georgia, serif")
+sans = unquote("400 15px/1.6 Helvetica, Arial, Verdana")
+fancy = unquote("400 15px/1.6 Baskerville, 'Ledger', Garamond, Georgia, serif")
+Liam = 'Liam-web', 'Liam', Garamond, Georgia, serif
+Corben = 'Corben', 'Liam', Garamond, Georgia, serif
+
+error_red = #ca3334
+
+font-feature-settings(n)
+  -webkit-font-feature-settings n
+  -moz-font-feature-settings n
+  font-feature-settings n
+
+*, *:before, *:after
+  box-sizing border-box
+
+html, body
+  height 100%
+  min-height 100%
+
+body
+  .loading
+    background-image url('/img/load.gif')
+    background-position center center
+    background-repeat no-repeat
+    width 32px
+    height 32px
+    left 50%
+    margin-left -16px
+    top 400px
+    opacity 0
+    position absolute
+    pointer-events none
+    transition 0.3s ease-in
+  &.show-loader
+    .loading
+      opacity 1
+  &.loaded
+    .loading
+      display none !important
+
+hr
+  margin-top 30px
+  border-color rgb(201, 194, 176)
+  box-shadow 0 1px #fff
+
+#bg
+  visibility hidden
+  opacity 0
+  &.move
+    transition opacity 3s ease-out 0.4s
+  .loaded &
+    visibility visible
+    opacity 1
+
+body
+  background-color #09131c
+
+.ss01
+  font-feature-settings "ss01" on
+.ss02
+  font-feature-settings "ss02" on
+.ss03
+  font-feature-settings "ss03" on
+
+#wrapper
+  overflow hidden
+  min-height 650px
+
+#info 
+  position relative
+  z-index 1
+  margin auto
+  max-width 600px
+  opacity 0
+  &.move
+    transition opacity 9s ease-out
+    &.on
+      opacity 1
+  p
+    text-align center
+    font serifmain
+    line-height 1.6em
+    color rgba(255,255,255,0.8)
+    text-shadow 0 1px 1px #000
+    margin 0 20px 10px
+    em
+      font fancy
+      font-style italic
+      line-height 1em
+      padding-right 3px
+    strong
+      font-weight bold
+      color #fff
+      a
+        color #fff
+        text-decoration none
+        &:hover
+          color rgba(255,255,255,0.8)
+
+nav
+  position relative
+  z-index 20
+  font-family Corben
+  ul
+    margin 0
+    padding 0
+    text-align center
+    li
+      display inline-block
+      vertical-align middle
+      padding 20px
+      @media (max-width: 1120px)
+        padding 10px
+      h1
+        font-family Liam
+        margin 0
+        padding 0
+        font-size 120px
+        color #fff
+        font-weight normal
+        text-shadow 0 2px 2px rgba(0,0,0,0.6)
+        @media (max-width: 1120px)
+          font-size 90px
+      a
+        margin 7px
+        padding 3px
+        color rgba(255,255,255,0.6)
+        text-shadow 0 2px 2px rgba(0,0,0,0.6)
+        text-decoration none
+        font-size 20px
+        span
+          position relative
+          transition color 0.3s ease-out
+          display inline-block
+        &.active
+          color #fff
+        &:hover span
+            position relative
+            &.char1
+              animation bounce 0.4s linear 0s forwards
+            &.char2
+              animation bounce 0.4s linear 0.07s forwards
+            &.char3
+              animation bounce 0.4s linear 0.14s forwards
+            &.char4
+              animation bounce 0.4s linear 0.21s forwards
+            &.char5
+              animation bounce 0.4s linear 0.28s forwards
+            &.char6
+              animation bounce 0.4s linear 0.35s forwards
+            &.char7
+              animation bounce 0.4s linear 0.42s forwards
+            &.char8
+              animation bounce 0.4s linear 0.49s forwards
+
+#nav_apply .char3, #nav_blogg .char5
+  font-feature-settings "ss01" on
+
+#bg
+  background-image url('/img/bg.png')
+  background-position center center
+  background-repeat no-repeat
+  width 1226px
+  height 785px
+  margin-top -150px
+  left 50%
+  margin-left -613px
+  position relative
+  #map
+    image '/img/map-shadow.png'
+    background-repeat no-repeat
+    background-position bottom center
+    padding-left 49px
+    background-size contain !important
+    width 738px
+    height 425px
+    left 50%
+    margin-left -369px
+    position absolute
+    top 185px
+    perspective 1000px
+
+    #map-a
+      width 197px
+      height 296px
+      position absolute
+      left 49px
+      top 0
+      background-size contain !important
+      transform rotateY(30deg) scale(0.95) rotate(-2deg) translateX(43px) translateY(12px)
+      transform-origin 100% 0
+      image '/img/map-a.png'
+
+    #map-b
+      width (312px / 2)
+      height (570px / 2)
+      position absolute
+      left: 165px + 49px
+      top: 12px;
+      background-size contain !important
+
+      transform-origin: 100% 0
+      transform rotateY(-40deg) translateX(0px)
+
+      image '/img/map-b.png'
+
+    #map-c
+      width (336px / 2)
+      height (570px / 2)
+      position absolute
+      left: 319px + 49px
+      top: 12px;
+      background-size contain !important
+      transform-origin: 0 0
+      image '/img/map-c.png'
+
+      transform rotateY(40deg) translateX(0px)
+      transform-origin 0 0
+
+    #map-d
+      width (392px / 2)
+      height (596px / 2)
+      position absolute
+      left: 457px + 49px
+      top: -1px;
+      background-size contain !important
+      image '/img/map-d.png'
+
+      transform-origin -50% 50%
+      transform rotateY(-40deg) translateX(-16px) scale(0.85) translateY(6px) rotate(1deg)
+
+    #balloon-outside
+      position relative
+      width 92px
+      height 196px
+      transform translate(40px, 20px)
+      &.move
+        transition all 50s ease-out
+      #balloon
+        width 92px
+        height 110px
+        image '/img/balloon.png'
+        background-size contain !important
+        animation float 5s linear 0s infinite
+        background-repeat no-repeat
+      #shadow
+        display none
+        width 127px
+        height 70px
+        position absolute
+        bottom 0px
+        left -10px
+        background-image url('/img/shadow.png')
+        animation float 5s linear 0s infinite
+
+.opened #bg #map
+  #map-a, #map-b, #map-c, #map-d
+    transform scale(1)
+    transition 1.7s ease-out
+
+@keyframes bounce
+  from
+    transform translate(0, 0px)
+  40%
+    transform translate(0, -5px)
+  80%
+    transform translate(0, 5px)
+    color #fff
+  100%
+    transform translate(0, 0px)
+    top 0px
+    color #fff
+
+@keyframes float
+  from
+    transform translate3D(0, 0px, 0)
+  57%
+    transform translate3D(0, 13px, 0)
+  100%
+    transform translate3D(0, -0px, 0)
+
+@keyframes pulse
+  from
+    transform scale(0.8)
+  57%
+    transform scale(1.3)
+  100%
+    transform scale(0.8)
+
+
+
+#test1, #test2, #test3, #test4
+  width 160px
+  float left
+  height 300px
+  overflow hidden
+  position relative
+  .s
+    width 127px
+    height 70px
+    position absolute
+    /*bottom 0px*/
+    left -10px
+    transform translate(40px, 20px)
+    .shadow
+      background-image url('/img/shadow.png')
+      animation pulse 5s linear 0s infinite
+      width 100%
+      height 100%
+      left -15px
+      position absolute
+      top 0
+
+    top 125px
+    position absolute
+    &.move
+      transition all 50s ease-out
+
+#test1 
+  width 179px
+  .s
+    left 0
+    .shadow
+      background-image url('/img/shadow-left.png')
+#test2 
+  width 140px
+  .s
+    left -187px
+    .shadow
+      background-image url('/img/shadow-right.png')
+#test3 
+  width 155px
+  .s 
+    left -327px
+    .shadow
+      background-image url('/img/shadow-left.png')
+#test4 
+  .s 
+    left -482px
+    .shadow
+      background-image url('/img/shadow-right.png')
+
+#blogg-stuff
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: rgba(255,255,255,0.5);
+  &:hover
+    color rgba(255,255,255,1)
+
+#social
+  position fixed
+  right 20px
+  bottom 20px
+  font-size 24px
+  a
+    color rgba(255,255,255,0.5)
+    &:hover
+      color #fff
+
+@media (max-width: 830px)
+  nav
+    top 100px
+    margin-bottom 100px
+    ul
+      li
+        padding 10px 0px
+      .logo
+        position absolute
+        top -100px
+        left 0
+        right 0
+        h1
+          font-size 80px
+
+@media (max-width: 500px)
+  #wrapper
+    min-height 150px !important
+  #bg
+    #map
+      transform scale(0.5) translateX(-15px)
+      top 60px
+  nav
+    top 80px
+    margin-bottom 80px
+    ul
+      li
+        padding 10px 0px
+        a
+          font-size 20px
+      .logo
+        top -80px
+        h1
+          font-size 60px
+
+
+pfgreen = #2a6154
+.subpage-white
+  background-color #f9f5f2
+  background-image url(/img/crease.png), url(/img/parchment-top.png), url(/img/parchment-bottom.png)
+  background-repeat no-repeat, repeat-x, repeat
+  background-position top center, top left, top left
+  padding-top 1px
+.subpage
+  background-image url('/img/bg.png')
+  background-attachment fixed
+  background-position center -380px
+  background-repeat no-repeat
+
+  #form-done
+    display none
+    text-align center
+    p
+      margin-bottom 1em
+    .flyingmachine
+      margin 30px auto 100px
+      width 299px
+      height 399px
+      background-image url(/img/flyingmachine.png)
+      animation float 4s linear 0s infinite
+
+  form
+    margin-bottom 3em
+    .grid-parent > label
+      padding-right: 20px;
+      color: #3d3218;
+      font-family "Corben", Garamond, serif
+      padding-top: 4px;
+      display: block;
+    label.error
+      color error_red
+    label
+      cursor pointer
+    input[type=text], textarea
+      transition box-shadow 0.3s ease-out
+      &:focus
+        outline none
+        box-shadow 0 0 9px #bfbbb2
+      &.error
+        border 1px solid error_red
+      border 1px solid #bfbbb2
+      &:focus
+        border 1px solid darken(#bfbbb2, 15%)
+      &.location
+        background-image url(/img/location.png)
+        background-repeat no-repeat
+        background-position 10px center
+        padding-left 35px
+      width 100%
+      font-size 13px
+      padding 15px
+
+  button, .button
+    padding 15px 20px
+    text-decoration none
+    background-image linear-gradient(lighten(pfgreen, 10%), darken(pfgreen, 15%))
+    display block
+    text-align center
+    border-radius 5px
+    box-shadow 0 -5px rgba(0,0,0,0.3) inset
+    border 0 none
+    width 100%
+    color #fff
+    text-shadow 0px 2px rgba(0,0,0,0.3)
+    font-family Corben
+    font-size 20px
+    padding 13px 0 20px
+    &:hover
+      background-image linear-gradient(lighten(pfgreen, 10%), darken(pfgreen, 25%))
+    &:active
+      box-shadow 0 3px 3px rgba(0,0,0,0.5) inset
+      background-image linear-gradient(darken(pfgreen, 25%), darken(pfgreen, 15%))
+      position relative
+      padding 16px 0 17px
+    &:disabled
+      background-image linear-gradient(#ccc, #aaa)
+
+  .buttonbg 
+    padding 37px 0 37px 37px
+    background-image url("/img/button-bg.png")
+    position relative
+    top -30px
+    left -37px
+    width 336px
+    margin-bottom -57px
+    button, .button
+      max-width 262px
+
+  .grid-container
+    > div h2:first-child
+      margin-top 0
+    max-width 960px
+    margin-top 30px
+    h2
+      text-shadow 2px 2px 0 rgba(0,0,0,0.1)
+      color #3d3218
+      font-family "Corben", Garamond, serif
+      font-weight normal
+      font-size 30px
+      margin-bottom 0.2em
+      + p
+        margin-top 0
+    ul
+      list-style none
+      padding 0
+      color #555
+    p, ul
+      color #555
+      font serifdefault
+      text-shadow 0 0
+      &.big
+        font-family Corben
+        font-size 20px
+      li
+        .icon
+          display inline-block
+          margin-left 10px
+          margin-right 13px
+          width 15px
+          text-align center
+      a
+        border-bottom 1px dotted rgba(0,0,0,0.5)
+        text-decoration none
+        color #333
+        &:hover
+          border-bottom 1px dotted rgba(0,0,0,0.8)
+          color #843525
+      em
+        font fancy
+        font-style italic
+    strong
+      color #000
+      font-weight normal
+    figure
+      float right
+      display block
+      margin 7px -20px 0px 10px
+      @media screen and (max-width: 900px)
+        margin-left 0
+      @media screen and (max-width: 500px)
+        float none
+        margin-bottom 1em
+      padding 5px
+      background-color #fff
+      box-shadow 0px 0px 2px rgba(0,0,0,0.5)
+      border-radius 2px
+      img
+        display block
+        width 270px
+      figcaption
+        color #333
+        font-family verdana
+        width 270px
+        font-size: 11px;
+        padding 6px 2px 0px
+        text-align center
+      + p
+        margin-top 0
+    #faq
+      h3
+        color #222
+        display: block;
+        margin-top: 22px;
+        border-bottom: 1px solid rgba(255,255,255,0.1)
+        font-size 17px
+        margin-bottom 4px
+        font-weight normal
+        padding-bottom: 4px;
+        &:first-child
+          margin-top 0
+        + p
+          margin-top 0
+      p
+        margin-left 10px
+
+#about
+  .signatures
+    margin-top 0
+    padding-bottom 60px
+    .tight
+      margin 0
+    .sig1
+      background-image url(/img/signatures.png)
+      width 207px
+      height 60px
+    .sig2
+      background-image url(/img/signatures.png)
+      width 214px
+      height 60px
+      background-position -302px 0
+
+#apply
+  &:before
+    display none
+    background-image url(/img/flyingmachine.png), url(/img/checkbox-f1.png), url(/img/checkbox-f2.png)
+
+  .timeline
+    background-image url(../img/timeline.png)
+    background-repeat no-repeat
+    background-position 0 6px 
+    padding-left 50px
+    li
+      display block
+      height 82px
+      font-size 12px
+      strong
+        display block
+        font-size 15px
+  #form-apply
+    strong
+      font-family Corben
+      color: #3d3218;
+      font-family "Corben", Garamond, serif
+      padding-bottom 8px
+      display block
+  p
+    margin 0
+  ul
+    margin 0
+    padding 0
+    label
+      margin-left 5px
+      font-size 0.9em
+      display inline block
+      span
+        font-size 0.8em
+        color #999
+  .when-picker
+    .fader.date
+      .radio
+        background-image url(/img/checkbox-f1.png);
+    .fader.date + .fader.date
+      .radio
+        background-image url(/img/checkbox-f2.png);
+
+  .upload
+    text-align center
+    display block
+    text-decoration none
+    &:hover
+      strong, p
+        color #843525
+      .blocky
+        background-color #843525
+    strong
+      color #333
+    p
+      color #666
+      margin-top 1em
+      font-size 0.8em
+  .blocky
+    width: 152px;
+    height: 197px;
+    margin: auto;
+    background-image url(/img/uploads.png)
+    background-color #bfbbb2
+    &.valid
+      background-color pfgreen !important
+  #upload_video
+    .blocky
+      background-position: -199px 0;
+      width: 178px;
+  #upload_video, #upload_resume
+    .error
+      display block
+      text-align center
+    .error + .upload
+      .blocky
+        background-color error_red
+
+footer
+  background-image url(/img/mountains.png)
+  height 296px
+  padding-top 70px
+  background-position top center
+  .balloon-footer-body
+    max-width 600px
+    height 50px
+    margin auto
+    .balloon-footer
+      width 65px
+      height 77px
+      background-image url(/img/balloon-footer.png)
+      animation glide 45s linear 0s infinite alternate forwards
+
+.joinus
+  p, ul
+    z-index 100
+    position relative
+.countries
+  strong
+    display inline-block
+    width 105px
+  .tbd
+    background-image url(/img/tbd.png)
+    background-repeat no-repeat
+    background-position left center
+    margin-left 2px
+    padding-left 22px
+  .cr
+    background-image url(/img/cr.png)
+    background-repeat no-repeat
+    background-position left center
+    margin-left 2px
+    padding-left 22px
+
+@keyframes glide
+  from
+    transform translate(0, 0px)
+  13%
+    transform translate(67px, 30px)
+  25%
+    transform translate(135px, 0)
+  38%
+    transform translate(202px, 30px)
+  50%
+    transform translate(270px, 0)
+  63%
+    transform translate(337px, 30px)
+  75%
+    transform translate(405px, 0)
+  88%
+    transform translate(472px, 30px)
+  100%
+    transform translate(540px, 0)
+
+@media screen and (max-width: 850px)
+  .subpage-white
+    background-image url(/img/parchment-top.png), url(/img/parchment-bottom.png)
+    background-repeat repeat-x, repeat
+    background-position top left, top left
+
+@media screen and (max-width: 767px)
+  #apply
+    .grid-parent > label
+      padding-left 10px
+  .upload
+    margin-bottom 40px
+
+  .skills 
+    strong
+      display block
+      margin-top 25px
+

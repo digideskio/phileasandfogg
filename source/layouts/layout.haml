@@ -1,0 +1,64 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title= data.page.title || "Phileas & Fogg"
+    %meta{:content => data.page.description || "What if you could travel the world while building awesome products with a team of highly talented developers and designers? We love adventure and are passionate about building products - and we'd love for you to join us!", :name => "description"}
+    %meta{:content => "width=device-width", :name => "viewport"}
+    = javascript_include_tag "/js/vendor/modernizr-2.6.1.min"
+    = stylesheet_link_tag "all"
+    = stylesheet_link_tag "fonts"
+
+    // Font!
+    %link{:href => "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", :rel => "stylesheet"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Corben", :rel => "stylesheet", :type => "text/css"}>
+
+    %meta{:href=>'og:image', :content=>'http://phileasandfogg.com/logo.png'}
+    %link{:rel=>"image_src", :href=>"http://phileasandfogg.com/logo.png"}
+
+  %body
+    /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+
+    %div{:id=>data.page.page, :class=>('subpage' if ['about', 'apply'].include? data.page.page)}
+      %nav
+        %ul
+          %li
+            %a#nav_home{:href=>"/"}= "home"
+          %li
+            %a#nav_blogg{:href=>"http://phileasandblogg.com"} blogg
+          %li.logo
+            %h1
+              p<span class="ss02">h</span>ilea<span class="ss02">s</span> &amp; fog<span class="ss01">g</span>
+          %li
+            %a#nav_about{:href=>"/about", :class=>('active' if data.page.page == 'about')} about
+          %li
+            %a#nav_apply{:href=>"/apply", :class=>('active' if data.page.page == 'apply')} apply
+
+      %div{:role => "main", :class => "main"}= yield
+
+      -if ['about', 'apply'].include? data.page.page
+        %footer
+          .balloon-footer-body
+            .balloon-footer
+
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+
+    :javascript
+      window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')
+    = javascript_include_tag "all"
+    
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43179787-1', 'phileasandfogg.com');
+      ga('send', 'pageview');
+
